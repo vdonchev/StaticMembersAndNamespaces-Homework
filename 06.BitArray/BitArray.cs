@@ -1,6 +1,7 @@
 ﻿namespace _06.BitArray
 {
     using System;
+    using System.Linq;
     using System.Numerics;
 
     public class BitArray
@@ -33,11 +34,6 @@
 
                 this.SetBitAtPos(index, value);
             }
-        }
-
-        public string GetBinaryString()
-        {
-            return string.Join(string.Empty, this.num);
         }
 
         public override string ToString()
