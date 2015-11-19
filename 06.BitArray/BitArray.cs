@@ -17,28 +17,6 @@
             this.num = new int[numberOfBits];
         }
 
-
-        private void SetBitAtPos(int pos, int bit)
-        {
-            this.num[pos] = bit;
-        }
-
-        private string BinaryToDecimal()
-        {
-            var decimalNum = new BigInteger(0);
-            for (var i = 0 ; i < this.num.Length; i++)
-            {
-                decimalNum += int.Parse(this.num[i].ToString()) * (BigInteger)Math.Pow(2, i);
-            }
-
-            return decimalNum.ToString();
-        }
-
-        public string GetBinaryString()
-        {
-            return string.Join("", this.num);
-        }
-
         public int this[int index]
         {
             set
@@ -57,9 +35,30 @@
             }
         }
 
+        public string GetBinaryString()
+        {
+            return string.Join(string.Empty, this.num);
+        }
+
         public override string ToString()
         {
             return this.BinaryToDecimal();
+        }
+
+        private void SetBitAtPos(int pos, int bit)
+        {
+            this.num[pos] = bit;
+        }
+
+        private string BinaryToDecimal()
+        {
+            var decimalNum = new BigInteger(0);
+            for (var i = 0; i < this.num.Length; i++)
+            {
+                decimalNum += int.Parse(this.num[i].ToString()) * (BigInteger)Math.Pow(2, i);
+            }
+
+            return decimalNum.ToString();
         }
     }
 }
