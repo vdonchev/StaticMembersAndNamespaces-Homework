@@ -2,7 +2,12 @@
 {
     public class Point3D
     {
-        private static readonly Point3D StartingPointCoordinates = new Point3D(0, 0, 0);
+        private static readonly Point3D StartingPointCoordinates;
+
+        static Point3D()
+        {
+            StartingPointCoordinates = new Point3D(0, 0, 0);
+        }
 
         public Point3D(double axisX, double axisY, double axisZ)
         {
